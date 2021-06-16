@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center mt-5">
+    <div class="col-3">
+      <form [formGroup]="wayPointForm" (ngSubmit)="onSubmit()">
+        <div class="text-center mb-4">
+            <h1 class="h3 mb-3 font-weight-normal">Add Way Point</h1>          
+        </div>
+        
+        <div class="form-label-group">
+          <input formControlName="missionId" type="text" id="inputMissionName" class="form-control" placeholder="example ">
+          <label for="inputMissionName">Mission Name</label>
+          <span class="text-danger" *ngIf="wayPointForm.get('missionId')?.invalid
+          && wayPointForm.get('missionId')?.touched
+          && wayPointForm.get('missionId')?.hasError('required')">
+          Mission Name value is required
+          </span>
+        </div>
+        
+        <div class="form-label-group">
+          <input formControlName="latitude" type="text" class="form-control" id="inputLatitude" placeholder="Latitude">
+          <label for="inputLatitude">Latitude</label>
+          <span class="text-danger" *ngIf="wayPointForm.get('latitude')?.invalid
+          && wayPointForm.get('latitude')?.touched
+          && wayPointForm.get('latitude')?.hasError('required')">
+          Latitude value is required
+          </span>
+        </div>
+      
+        <div class="form-label-group">
+          <input formControlName="longitude" type="text" class="form-control" id="inputLongitude" placeholder="Longitude">
+          <label for="inputLongitude">Longitude</label>
+          <span class="text-danger" *ngIf="wayPointForm.get('longitude')?.invalid
+          && wayPointForm.get('longitude')?.touched
+          && wayPointForm.get('longitude')?.hasError('required')">
+          Longitude value is required
+          </span>
+
+          <!-- <span class="text-danger" *ngIf="wayPointForm.get('latitude')?.invalid
+                      && wayPointForm.get('latitude')?.touched
+                      && wayPointForm.get('latitude').hasError('pattern')">
+                      Latitude value is not valid
+          </span> -->
+        </div>
+      
+        <div class="form-label-group">
+          <input formControlName="altitude" type="text" class="form-control" id="inputAltitude" placeholder="Altitude">
+          <label for="inputAltitude">Altitude</label>
+          <span class="text-danger" *ngIf="wayPointForm.get('altitude')?.invalid
+          && wayPointForm.get('altitude')?.touched
+          && wayPointForm.get('altitude')?.hasError('required')">
+          Altitude value is required
+          </span>
+        </div>
+      
+        <button [disabled]="wayPointForm.invalid" class="btn btn-lg btn-primary btn-block" type="submit">Add Way Point</button>        
+      </form>
+    </div>
+
+    <div class="col-4">
+      <p>Form Status: {{wayPointForm.status}}</p>
+      <p>Latitude Status: {{wayPointForm.get('latitude')?.status}}</p>
+      <p>Latitude Touched: {{wayPointForm.get('latitude')?.touched}}</p>
+      <p>Latitude Dirty: {{wayPointForm.get('latitude')?.dirty}}</p>
+      <pre>{{wayPointForm.value | json}}</pre>
+    </div>
+  </div>
+  

@@ -1,1 +1,34 @@
-<p>waypoint-list works!</p>
+<div class="d-flex justify-content-center mt-5">
+  <nav class="my-2 my-md-0 me-md-3 text-uppercase" style="font-size: large;">      
+    <a class="p-2" routerLink="/waypointadd" routerLinkActive="active">Add Way Point</a>
+    <button routerLink="/waypoint/waypointadd" type="button" class="btn btn-primary btn-sm">Add </button>     
+  </nav>
+    <div class="col-10">
+        <table *ngIf="wayPoints" class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Mission Name</th>
+                <th scope="col">Latitude</th>
+                <th scope="col">Longitude</th>
+                <th scope="col">Altitude</th>
+                <th scope="col">Opration</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let waypointList of wayPoints">
+              <tr>
+                <th scope="row">{{waypointList.id}}</th>
+                <th>{{waypointList.missionId}}</th>
+                <td>{{waypointList.latitude}}</td>
+                <td>{{waypointList.longitude}}</td>
+                <td>{{waypointList.altitude}}</td>
+                <td>
+                    <button routerLink="/waypoint/{{waypointList.id}}" type="button" class="btn btn-primary btn-sm">Edit </button> |
+                    <button (click)="deleteWayPoint(waypointList.id)" type="button" class="btn btn-secondary btn-sm">Delete</button>
+                </td>
+              </tr>              
+            </tbody>
+          </table>
+          <h1>null data</h1>
+    </div>
+</div>

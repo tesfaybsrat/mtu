@@ -1,0 +1,18 @@
+{
+  "waypoint": [
+    {
+      "id": 2,
+      "missionId": "2",
+      "latitude": "22.45",
+      "longitude": "28.26",
+      "altitude": "25.5659"
+    },
+    {
+      "id": 3,
+      "missionId": "3",
+      "latitude": "32.45",
+      "longitude": "38.26",
+      "altitude": "35.5659"
+    }
+  ]
+}
