@@ -16,8 +16,8 @@ export class WaypointService {
   baseUrl = environment.apiUrl
   constructor(private http: HttpClient, private router: Router) {}
 
-  getWayPointById(id: number) {
-    return this.http.get<IWayPoint>(this.baseUrl + 'waypoint/' + id)
+  getWayPointById(id: any): Observable<IWayPoint> {
+    return this.http.get<IWayPoint>(this.baseUrl + 'waypoint/' + id);
   }
 
   getAllWayPoints(): Observable<IWayPoint[]> {
@@ -25,14 +25,14 @@ export class WaypointService {
   }
   
   addWayPoint(value: any){
-     return this.http.post(this.baseUrl + "waypoint/add" , value);
+     return this.http.post(this.baseUrl + "waypoint" , value);
   }
 
   removeWayPoint(id : string){
      return  this.http.delete(this.baseUrl + "waypoint/" + id);
   }
 
-  updateWayPoint(value: IWayPoint): Observable<IWayPoint> {
+  updateWayPoint(id: any, value: IWayPoint): Observable<IWayPoint> {
     return this.http.put<IWayPoint>(this.baseUrl + 'waypoint/' + value.id, value);
   }
 }

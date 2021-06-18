@@ -1,0 +1,29 @@
+<nav class="my-2 my-md-0 me-md-3 text-uppercase" style="font-size: large;">      
+    <button routerLink="/waypoint/add/new" type="button" class="btn btn-primary btn-sm">Add New Certificate </button>
+  </nav>
+  
+  <div class="d-flex justify-content-center mt-5">
+      <div class="col-10">
+          <table *ngIf="certificateLists" class="table table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Certificate Name</th>
+                  <th scope="col">Type</th>                 
+                </tr>
+              </thead>
+              <tbody *ngFor="let certificateList of certificateLists">
+                <tr>
+                  <th scope="row">{{certificateList.id}}</th>
+                  <th>{{certificateList.name}}</th>
+                  <td>{{certificateList.type}}</td>
+                  <td>
+                      <button routerLink="/certificate/{{certificateList.id}}" type="button" class="btn btn-primary btn-sm">Edit </button> |
+                      <button (click)="deleteCertificate(certificateList.id)" type="button" class="btn btn-secondary btn-sm">Delete</button>
+                  </td>
+                </tr>              
+              </tbody>
+            </table>
+      </div>
+  </div>
+  

@@ -1,9 +1,0 @@
-{
-    "waypoint": [
-        {"id": 1, "missionId": "1", "latitude":"12.45", "longitude":"78.26", "altitude": "45.5659"},
-        {"id": 2, "missionId": "2", "latitude":"22.45", "longitude":"28.26", "altitude": "25.5659"},
-        {"id": 3, "missionId": "3", "latitude":"32.45", "longitude":"38.26", "altitude": "35.5659"},
-        {"id": 4, "missionId": "4", "latitude":"42.45", "longitude":"48.26", "altitude": "45.5659"},
-        {"id": 5, "missionId": "5", "latitude":"52.45", "longitude":"58.26", "altitude": "55.5659"}
-    ]
-}

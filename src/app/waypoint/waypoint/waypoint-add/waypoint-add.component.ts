@@ -30,8 +30,11 @@ export class WaypointAddComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.wayPointForm.value);
-    this.waypointService.addWayPoint(this.wayPointForm.value);
+    //console.log(this.wayPointForm.value);
+    this.waypointService.addWayPoint(this.wayPointForm.value).subscribe(response=>{
+      console.log(response);
+
+    });
   }
 
 }

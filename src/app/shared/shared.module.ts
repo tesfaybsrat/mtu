@@ -14,8 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   exports : [
     CarouselModule,
-    BsDropdownModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BsDropdownModule    
   ]
 })
 export class SharedModule { }

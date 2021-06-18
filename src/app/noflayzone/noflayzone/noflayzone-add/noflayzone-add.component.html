@@ -1,0 +1,81 @@
+<div class="d-flex justify-content-center mt-5">
+    <div class="col-3">
+      <form [formGroup]="noflyzoneForm" (ngSubmit)="onSubmit()">
+        <div class="text-center mb-4">
+            <h1 class="h3 mb-3 font-weight-normal">Add Way Point</h1>          
+        </div>
+        
+        <div class="form-label-group">
+          <input formControlName="name" type="text" id="inputName" class="form-control" placeholder="name..">
+          <label for="inputName">Name</label>
+          <span class="text-danger" *ngIf="noflyzoneForm.get('name')?.invalid
+          && noflyzoneForm.get('name')?.touched
+          && noflyzoneForm.get('name')?.hasError('required')">
+          Name value is required
+          </span>
+        </div>
+        
+        <div class="form-label-group">
+          <input formControlName="latitude" type="text" class="form-control" id="inputLatitude" placeholder="Latitude(90.01)">
+          <label for="inputLatitude">Latitude</label>
+          <span class="text-danger" *ngIf="noflyzoneForm.get('latitude')?.invalid
+          && noflyzoneForm.get('latitude')?.touched
+          && noflyzoneForm.get('latitude')?.hasError('required')">
+          Latitude value is required
+          </span>
+        </div>
+      
+        <div class="form-label-group">
+          <input formControlName="longitude" type="text" class="form-control" id="inputLongitude" placeholder="Longitude(-180.0)">
+          <label for="inputLongitude">Longitude</label>
+          <span class="text-danger" *ngIf="noflyzoneForm.get('longitude')?.invalid
+          && noflyzoneForm.get('longitude')?.touched
+          && noflyzoneForm.get('longitude')?.hasError('required')">
+          Longitude value is required
+          </span>
+        </div>
+      
+        <div class="form-label-group">
+          <input formControlName="startTime" type="datetime" class="form-control" id="inputStartTime" placeholder="Start Time">
+          <label for="inputStartTime">Start Time</label>
+          <span class="text-danger" *ngIf="noflyzoneForm.get('startTime')?.invalid
+          && noflyzoneForm.get('startTime')?.touched
+          && noflyzoneForm.get('startTime')?.hasError('required')">
+          Start Time value is required
+          </span>
+        </div>
+
+        <div class="form-label-group">
+            <input formControlName="endTime" type="datetime" class="form-control" id="inputEndTime" placeholder="End Time">
+            <label for="inputEndTime">End Time</label>
+            <span class="text-danger" *ngIf="noflyzoneForm.get('endTime')?.invalid
+            && noflyzoneForm.get('endTime')?.touched
+            && noflyzoneForm.get('endTime')?.hasError('required')">
+            End Time value is required
+            </span>
+          </div>
+
+          <div class="form-label-group">
+            <input formControlName="radius" type="text" class="form-control" id="inputRadius" placeholder="Radius">
+            <label for="inputRadius">Radius</label>
+            <span class="text-danger" *ngIf="noflyzoneForm.get('radius')?.invalid
+            && noflyzoneForm.get('radius')?.touched
+            && noflyzoneForm.get('radius')?.hasError('required')">
+            Radius value is required
+            </span>
+          </div>
+      
+        <button [disabled]="noflyzoneForm.invalid" class="btn btn-lg btn-primary btn-block" type="submit">Add No Fly Zone</button>   
+        <button routerLink="/noflyzone" type="button" class="btn btn-primary btn-sm">Back </button>     
+      </form>
+    </div>
+
+    <!-- <div class="col-4">
+      <p>Form Status: {{noflyzoneForm.status}}</p>
+      <p>Latitude Status: {{noflyzoneForm.get('latitude')?.status}}</p>
+      <p>Latitude Touched: {{noflyzoneForm.get('latitude')?.touched}}</p>
+      <p>Latitude Dirty: {{noflyzoneForm.get('latitude')?.dirty}}</p>
+      <pre>{{noflyzoneForm.value | json}}</pre>
+    </div> -->
+  </div>
+  

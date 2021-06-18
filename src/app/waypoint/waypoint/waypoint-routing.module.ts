@@ -6,10 +6,9 @@ import { WaypointEditComponent } from './waypoint-edit/waypoint-edit.component';
 import { WaypointAddComponent } from './waypoint-add/waypoint-add.component';
 
 const routes: Routes = [
-   {path: '', component: WaypointListComponent},
-  // {path: '', component: WaypointAddComponent},
-  {path: ':id', component: WaypointEditComponent},
-  {path: ':waypointadd', component: WaypointAddComponent}
+   {path: '', component: WaypointListComponent}, 
+   {path: ':add/new', component: WaypointAddComponent},
+   {path: ':id', component: WaypointEditComponent}  
 ]
 
 @NgModule({

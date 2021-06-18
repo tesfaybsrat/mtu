@@ -16,7 +16,7 @@
         </div>
         
         <div class="form-label-group">
-          <input formControlName="latitude" type="text" class="form-control" id="inputLatitude" placeholder="Latitude">
+          <input formControlName="latitude" type="text" class="form-control" id="inputLatitude" placeholder="Latitude(90.01)">
           <label for="inputLatitude">Latitude</label>
           <span class="text-danger" *ngIf="wayPointForm.get('latitude')?.invalid
           && wayPointForm.get('latitude')?.touched
@@ -26,7 +26,7 @@
         </div>
       
         <div class="form-label-group">
-          <input formControlName="longitude" type="text" class="form-control" id="inputLongitude" placeholder="Longitude">
+          <input formControlName="longitude" type="text" class="form-control" id="inputLongitude" placeholder="Longitude(-180.0)">
           <label for="inputLongitude">Longitude</label>
           <span class="text-danger" *ngIf="wayPointForm.get('longitude')?.invalid
           && wayPointForm.get('longitude')?.touched
@@ -51,7 +51,8 @@
           </span>
         </div>
       
-        <button [disabled]="wayPointForm.invalid" class="btn btn-lg btn-primary btn-block" type="submit">Add Way Point</button>        
+        <button [disabled]="wayPointForm.invalid" class="btn btn-lg btn-primary btn-block" type="submit">Add Way Point</button>   
+        <button routerLink="/waypoint" type="button" class="btn btn-primary btn-sm">Back </button>     
       </form>
     </div>
 
